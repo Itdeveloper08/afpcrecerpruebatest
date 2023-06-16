@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PruebaTrabajo.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Departamentos por empleados</h1>
+
+<table class="Tabla">
+    <thead class="Cabezera">
+        <tr>
+            <th>
+                Departamento
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="Celda">
+            <td>
+                <a asp-action="Seleccion" asp-route-id="@item.IdDepartamento">@item.NombreDepartamento</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
